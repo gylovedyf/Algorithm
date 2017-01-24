@@ -1,0 +1,21 @@
+class Solution(object):
+    def repeatedSubstringPattern(self, str):
+        """
+        :type str: str
+        :rtype: bool
+        """
+        length = len(str)
+        i = length / 2
+        while (i>0):
+            if (length % i == 0):
+                substr = str[0 : i]
+                sub = "";
+                multi = length / i
+                strlist = []
+                for j in range(multi):
+                    strlist.append(substr)
+                sub = ''.join(strlist)
+                if (sub == str):
+                    return True
+            i = i - 1
+        return False
